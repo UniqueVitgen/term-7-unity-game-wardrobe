@@ -1,0 +1,264 @@
+fileFormatVersion: 2
+guid: 05f3a55332c464b759e0b2f71ca860e9
+timeCreated: 1540485683
+licenseType: Free
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: $$$DUMMY.Shape054
+    100002: $$$DUMMY.Shape054.001
+    100004: //RootNode
+    100006: Cube
+    100008: Cylinder02
+    100010: Cylinder02.001
+    100012: Cylinder02.002
+    100014: Cylinder02.003
+    100016: Lamp
+    100018: Mesh.000
+    100020: Mesh.001
+    100022: Mesh.002
+    100024: Mesh.003
+    100026: S Hook Ultimate 6.000
+    100028: S Hook Ultimate 6.001
+    100030: S Hook Ultimate 6.002
+    100032: S Hook Ultimate 6.003
+    100034: S Hook Ultimate 6.004
+    100036: S Hook Ultimate 6.005
+    100038: S Hook Ultimate 6.006
+    100040: S Hook Ultimate 6.007
+    100042: S Hook Ultimate 6.008
+    100044: S Hook Ultimate 6.009
+    100046: S Hook Ultimate 6.010
+    100048: S Hook Ultimate 6.011
+    100050: S Hook Ultimate 6.012
+    100052: S Hook Ultimate 6.013
+    100054: S Hook Ultimate 6.014
+    100056: S Hook Ultimate 6.015
+    100058: S Hook Ultimate 6.016
+    100060: S Hook Ultimate 6.017
+    100062: S Hook Ultimate 6.018
+    100064: S Hook Ultimate 6.019
+    100066: S Hook Ultimate 6.020
+    100068: S Hook Ultimate 6.021
+    100070: S Hook Ultimate 6.022
+    100072: S Hook Ultimate 6.023
+    100074: S Hook Ultimate 6.024
+    100076: S Hook Ultimate 6.025
+    100078: S Hook Ultimate 6.026
+    100080: S Hook Ultimate 6.027
+    100082: S Hook Ultimate 6.028
+    100084: S Hook Ultimate 6.029
+    400000: $$$DUMMY.Shape054
+    400002: $$$DUMMY.Shape054.001
+    400004: //RootNode
+    400006: Cube
+    400008: Cylinder02
+    400010: Cylinder02.001
+    400012: Cylinder02.002
+    400014: Cylinder02.003
+    400016: Lamp
+    400018: Mesh.000
+    400020: Mesh.001
+    400022: Mesh.002
+    400024: Mesh.003
+    400026: S Hook Ultimate 6.000
+    400028: S Hook Ultimate 6.001
+    400030: S Hook Ultimate 6.002
+    400032: S Hook Ultimate 6.003
+    400034: S Hook Ultimate 6.004
+    400036: S Hook Ultimate 6.005
+    400038: S Hook Ultimate 6.006
+    400040: S Hook Ultimate 6.007
+    400042: S Hook Ultimate 6.008
+    400044: S Hook Ultimate 6.009
+    400046: S Hook Ultimate 6.010
+    400048: S Hook Ultimate 6.011
+    400050: S Hook Ultimate 6.012
+    400052: S Hook Ultimate 6.013
+    400054: S Hook Ultimate 6.014
+    400056: S Hook Ultimate 6.015
+    400058: S Hook Ultimate 6.016
+    400060: S Hook Ultimate 6.017
+    400062: S Hook Ultimate 6.018
+    400064: S Hook Ultimate 6.019
+    400066: S Hook Ultimate 6.020
+    400068: S Hook Ultimate 6.021
+    400070: S Hook Ultimate 6.022
+    400072: S Hook Ultimate 6.023
+    400074: S Hook Ultimate 6.024
+    400076: S Hook Ultimate 6.025
+    400078: S Hook Ultimate 6.026
+    400080: S Hook Ultimate 6.027
+    400082: S Hook Ultimate 6.028
+    400084: S Hook Ultimate 6.029
+    2300000: Cube
+    2300002: Cylinder02
+    2300004: Cylinder02.001
+    2300006: Cylinder02.002
+    2300008: Cylinder02.003
+    2300010: Mesh.000
+    2300012: Mesh.001
+    2300014: Mesh.002
+    2300016: Mesh.003
+    2300018: S Hook Ultimate 6.000
+    2300020: S Hook Ultimate 6.001
+    2300022: S Hook Ultimate 6.002
+    2300024: S Hook Ultimate 6.003
+    2300026: S Hook Ultimate 6.004
+    2300028: S Hook Ultimate 6.005
+    2300030: S Hook Ultimate 6.006
+    2300032: S Hook Ultimate 6.007
+    2300034: S Hook Ultimate 6.008
+    2300036: S Hook Ultimate 6.009
+    2300038: S Hook Ultimate 6.010
+    2300040: S Hook Ultimate 6.011
+    2300042: S Hook Ultimate 6.012
+    2300044: S Hook Ultimate 6.013
+    2300046: S Hook Ultimate 6.014
+    2300048: S Hook Ultimate 6.015
+    2300050: S Hook Ultimate 6.016
+    2300052: S Hook Ultimate 6.017
+    2300054: S Hook Ultimate 6.018
+    2300056: S Hook Ultimate 6.019
+    2300058: S Hook Ultimate 6.020
+    2300060: S Hook Ultimate 6.021
+    2300062: S Hook Ultimate 6.022
+    2300064: S Hook Ultimate 6.023
+    2300066: S Hook Ultimate 6.024
+    2300068: S Hook Ultimate 6.025
+    2300070: S Hook Ultimate 6.026
+    2300072: S Hook Ultimate 6.027
+    2300074: S Hook Ultimate 6.028
+    2300076: S Hook Ultimate 6.029
+    3300000: Cube
+    3300002: Cylinder02
+    3300004: Cylinder02.001
+    3300006: Cylinder02.002
+    3300008: Cylinder02.003
+    3300010: Mesh.000
+    3300012: Mesh.001
+    3300014: Mesh.002
+    3300016: Mesh.003
+    3300018: S Hook Ultimate 6.000
+    3300020: S Hook Ultimate 6.001
+    3300022: S Hook Ultimate 6.002
+    3300024: S Hook Ultimate 6.003
+    3300026: S Hook Ultimate 6.004
+    3300028: S Hook Ultimate 6.005
+    3300030: S Hook Ultimate 6.006
+    3300032: S Hook Ultimate 6.007
+    3300034: S Hook Ultimate 6.008
+    3300036: S Hook Ultimate 6.009
+    3300038: S Hook Ultimate 6.010
+    3300040: S Hook Ultimate 6.011
+    3300042: S Hook Ultimate 6.012
+    3300044: S Hook Ultimate 6.013
+    3300046: S Hook Ultimate 6.014
+    3300048: S Hook Ultimate 6.015
+    3300050: S Hook Ultimate 6.016
+    3300052: S Hook Ultimate 6.017
+    3300054: S Hook Ultimate 6.018
+    3300056: S Hook Ultimate 6.019
+    3300058: S Hook Ultimate 6.020
+    3300060: S Hook Ultimate 6.021
+    3300062: S Hook Ultimate 6.022
+    3300064: S Hook Ultimate 6.023
+    3300066: S Hook Ultimate 6.024
+    3300068: S Hook Ultimate 6.025
+    3300070: S Hook Ultimate 6.026
+    3300072: S Hook Ultimate 6.027
+    3300074: S Hook Ultimate 6.028
+    3300076: S Hook Ultimate 6.029
+    4300000: Cube
+    4300002: Cylinder02.001
+    4300004: S Hook Ultimate 6.015
+    4300006: S Hook Ultimate 6.010
+    4300008: S Hook Ultimate 6.005
+    4300010: S Hook Ultimate 6.004
+    4300012: S Hook Ultimate 6.002
+    4300014: Mesh.002
+    4300016: Mesh.001
+    4300018: Cylinder02.003
+    4300020: Mesh.003
+    4300022: Mesh.000
+    4300024: S Hook Ultimate 6.029
+    4300026: S Hook Ultimate 6.027
+    4300028: S Hook Ultimate 6.025
+    4300030: S Hook Ultimate 6.024
+    4300032: S Hook Ultimate 6.023
+    10800000: Lamp
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
