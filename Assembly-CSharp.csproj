@@ -71,6 +71,7 @@
      <Compile Include="Assets\SampleScenes\Scripts\SlowMoButton.cs" />
      <Compile Include="Assets\scripts\AnimController.cs" />
      <Compile Include="Assets\scripts\CharacterControllerMovement.cs" />
+     <Compile Include="Assets\scripts\collider\WardrobeColliderController.cs" />
      <Compile Include="Assets\scripts\EnterTrigger.cs" />
      <Compile Include="Assets\scripts\NewBehaviourScript.cs" />
      <Compile Include="Assets\scripts\ObjectCollision.cs" />
