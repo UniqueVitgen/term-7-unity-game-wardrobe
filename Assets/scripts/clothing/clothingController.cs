@@ -14,6 +14,7 @@ public class clothingController : MonoBehaviour {
 		if (renderers.Length > 0) {
 			for (int i = 0; i < renderers.Length; i++) {
 				renderers [i].rootBone = rootBone.transform;
+				//renderers[i].
 			}
 		}
 	}

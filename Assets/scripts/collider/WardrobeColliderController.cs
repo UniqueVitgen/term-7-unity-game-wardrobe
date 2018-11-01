@@ -15,7 +15,8 @@ public class WardrobeColliderController : MonoBehaviour {
 	public GameObject HangPosition;
 	public GameObject HangAttendantPosition;
 	public float speed;
-	public SkinnedMeshRenderer CrutchJacket;
+	public GameObject CrutchJacket;
+	public GameObject TrueJacket;
 	private AttendantStateEnum AttendantState;
 	private ThingStateEnum ThingState;
 	private float secondForWait;
@@ -44,12 +45,20 @@ public class WardrobeColliderController : MonoBehaviour {
 				ChangeParent (Thing, HangPosition);
 			}
 		} else if (ThingState == ThingStateEnum.InAttendant) {
+			if (!this.CrutchJacket.activeSelf) {
+				this.CrutchJacket.SetActive (true);
+				this.TrueJacket.SetActive (false);
+			}
 			if (Thing.transform.parent != AttendantHand.transform) {
 				ChangeParent (Thing, AttendantHand);
 			}
 		} else if (ThingState == ThingStateEnum.InOwner) {
 			if (Thing.transform.parent != Player.transform) {
 				ChangeParent (Thing, Player);
+			}
+			if (this.CrutchJacket.activeSelf) {
+				this.CrutchJacket.SetActive (false);
+				this.TrueJacket.SetActive (true);
 			}
 		}
 	}
