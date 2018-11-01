@@ -15,6 +15,7 @@ public class WardrobeColliderController : MonoBehaviour {
 	public GameObject HangPosition;
 	public GameObject HangAttendantPosition;
 	public float speed;
+	public SkinnedMeshRenderer CrutchJacket;
 	private AttendantStateEnum AttendantState;
 	private ThingStateEnum ThingState;
 	private float secondForWait;
@@ -74,9 +75,9 @@ public class WardrobeColliderController : MonoBehaviour {
 		} else if (state == StudentStateEnum.TakeTo) {
 			animator.SetInteger ("state", 2);
 		} else if (state == StudentStateEnum.TakingProcessDown) {
-			animator.SetInteger ("state", 3);
-		} else if (state == StudentStateEnum.TakingProcessStay) {
 			animator.SetInteger ("state", 4);
+		} else if (state == StudentStateEnum.TakingProcessStay) {
+			animator.SetInteger ("state", 3);
 		}
 		StudentState = state;
 		print ("StudentState: " + state);
