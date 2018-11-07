@@ -79,7 +79,7 @@ public class WardrobeColliderController : MonoBehaviour {
 
 	private void setPlayerState(StudentStateEnum state) {
 		if (state == StudentStateEnum.Stay) {
-			animator.SetInteger ("state", 0);
+			animator.SetInteger ("state", 5);
 		} else if (state == StudentStateEnum.Run) {
 			animator.SetInteger ("state", 1);
 		} else if (state == StudentStateEnum.TakeFrom) {
@@ -116,6 +116,7 @@ public class WardrobeColliderController : MonoBehaviour {
 		} else if (state == AttendantStateEnum.TakingProcessDown) {
 			WardrobeAnimator.SetInteger ("state", 5);
 		}
+		print (state);
 		AttendantState = state;
 		//print ("AttendantState " + state);
 	}
