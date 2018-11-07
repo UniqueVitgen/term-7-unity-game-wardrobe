@@ -17,6 +17,7 @@ public class WardrobeColliderController : MonoBehaviour {
 	public float speed;
 	public GameObject CrutchJacket;
 	public GameObject TrueJacket;
+	public GameObject FalseJacket;
 	private AttendantStateEnum AttendantState;
 	private ThingStateEnum ThingState;
 	private float secondForWait;
@@ -46,6 +47,7 @@ public class WardrobeColliderController : MonoBehaviour {
 			}
 		} else if (ThingState == ThingStateEnum.InAttendant) {
 			if (!this.CrutchJacket.activeSelf) {
+				this.FalseJacket.SetActive (true);
 				this.CrutchJacket.SetActive (true);
 				this.TrueJacket.SetActive (false);
 			}
@@ -57,6 +59,7 @@ public class WardrobeColliderController : MonoBehaviour {
 				ChangeParent (Thing, Player);
 			}
 			if (this.CrutchJacket.activeSelf) {
+				this.FalseJacket.SetActive (false);
 				this.CrutchJacket.SetActive (false);
 				this.TrueJacket.SetActive (true);
 			}
