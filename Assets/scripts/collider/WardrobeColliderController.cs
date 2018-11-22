@@ -7,18 +7,25 @@ public class WardrobeColliderController : MonoBehaviour {
 	public GameObject WardrobeAttendantPerson;
 	public GameObject AttendantHand;
 	public Animator WardrobeAnimator;
+	public GameObject WardrobeAttendantPerson2;
+	public GameObject AttendantHand2;
+	public Animator WardrobeAnimator2;
+
 	//public GameObject HangPosition;
 	public GameObject GiveToWardrobeText;
 	public GameObject TakeFromWardrobeText;
 	public GameObject Thing;
 	public GameObject TakePosition;
+	public GameObject TakePosition2;
 	public GameObject HangPosition;
 	public GameObject HangAttendantPosition;
 	public float speed;
 	public GameObject CrutchJacket;
+	public GameObject PlaceWhereJacket;
 	public GameObject TrueJacket;
 	public GameObject FalseJacket;
 	private AttendantStateEnum AttendantState;
+	private AttendantStateEnum AttendantState2;
 	private ThingStateEnum ThingState;
 	private float secondForWait;
 	Animator animator;
@@ -51,8 +58,14 @@ public class WardrobeColliderController : MonoBehaviour {
 				this.CrutchJacket.SetActive (true);
 				this.TrueJacket.SetActive (false);
 			}
-			if (Thing.transform.parent != AttendantHand.transform) {
-				ChangeParent (Thing, AttendantHand);
+			if (AttendantState2 != AttendantStateEnum.Waiting) {
+				if (Thing.transform.parent != AttendantHand2.transform) {
+					ChangeParent (Thing, AttendantHand2, PlaceWhereJacket);
+				}
+			} else if (AttendantState != AttendantStateEnum.Waiting) {
+				if (Thing.transform.parent != AttendantHand.transform) {
+					ChangeParent (Thing, AttendantHand, PlaceWhereJacket);
+				}
 			}
 		} else if (ThingState == ThingStateEnum.InOwner) {
 			if (Thing.transform.parent != Player.transform) {
@@ -67,9 +80,18 @@ public class WardrobeColliderController : MonoBehaviour {
 	}
 
 	private void RenderAttendantState() {
+		if (AttendantState2 == AttendantStateEnum.WalkingToHangingPlace) {
+			attendantGoToHangPosition ();
+		} else if (AttendantState2 == AttendantStateEnum.WalkingToTakingPlace) {
+			attendantGoToTakePosition ();
+		}
+		else if (AttendantState2 == AttendantStateEnum.Waiting) {
+			WardrobeAttendantPerson2.transform.position = TakePosition2.transform.position;
+		}
 		if (AttendantState == AttendantStateEnum.WalkingToHangingPlace) {
 			attendantGoToHangPosition ();
-		} else if (AttendantState == AttendantStateEnum.WalkingToTakingPlace) {
+		} else 
+			if (AttendantState == AttendantStateEnum.WalkingToTakingPlace) {
 			attendantGoToTakePosition ();
 		}
 		else if (AttendantState == AttendantStateEnum.Waiting) {
@@ -121,16 +143,48 @@ public class WardrobeColliderController : MonoBehaviour {
 		//print ("AttendantState " + state);
 	}
 
+	private  void setAttendantState2(AttendantStateEnum state) {
+		if (state == AttendantStateEnum.HangingOut) {
+			WardrobeAnimator2.SetInteger ("state", 3);
+		} else if (state == AttendantStateEnum.HanginIn) {
+			WardrobeAnimator2.SetInteger ("state", 3);
+		} else if (state == AttendantStateEnum.TakingIn) {
+			WardrobeAnimator2.SetInteger ("state", 3);
+		} else if (state == AttendantStateEnum.TakingOut) {
+			WardrobeAnimator2.SetInteger ("state", 3);
+		} else if (state == AttendantStateEnum.Waiting) {
+			WardrobeAnimator2.SetInteger ("state", 0);
+		} else if (state == AttendantStateEnum.WalkingToHangingPlace) {
+			WardrobeAnimator2.SetInteger ("state", 1);
+		} else if (state == AttendantStateEnum.WalkingToTakingPlace) {
+			WardrobeAnimator2.SetInteger ("state", 1);
+		} else if (state == AttendantStateEnum.TakingProcessStay) {
+			WardrobeAnimator2.SetInteger ("state", 4);
+		} else if (state == AttendantStateEnum.TakingProcessDown) {
+			WardrobeAnimator2.SetInteger ("state", 5);
+		}
+		print (state);
+		AttendantState2 = state;
+		//print ("AttendantState " + state);
+	}
+
 	private void setThignState(ThingStateEnum state) {
 		ThingState = state;
 	}
 
 	private void attendantGoToTakePosition() {
 		float step = speed * Time.deltaTime;
-		GameObjectMoveToAnotherObject (WardrobeAttendantPerson, TakePosition, step);
+		float dist = 0.0f;
+		if (ThingState == ThingStateEnum.InHanging) {
+			GameObjectMoveToAnotherObject (WardrobeAttendantPerson, TakePosition, step);
+			dist = Vector3.Distance(WardrobeAttendantPerson.transform.position, TakePosition.transform.position);
+		} else if (ThingState == ThingStateEnum.InAttendant) {
+			GameObjectMoveToAnotherObject (WardrobeAttendantPerson2, TakePosition2, step);
+			dist = Vector3.Distance(WardrobeAttendantPerson2.transform.position, TakePosition2.transform.position);
+		}
 		//WardrobeAttendantPerson.transform.position = Vector3.MoveTowards(WardrobeAttendantPerson.transform.position, TakePosition.transform.position, step);
 		//WardrobeAttendantPerson.transform.rotation = Quaternion.LookRotation(TakePosition.transform.position);
-		float dist = Vector3.Distance(WardrobeAttendantPerson.transform.position, TakePosition.transform.position);
+
 		if (dist < step) {
 			if (ThingState == ThingStateEnum.InHanging) {
 				setAttendantState (AttendantStateEnum.Waiting);
@@ -144,23 +198,29 @@ public class WardrobeColliderController : MonoBehaviour {
 
 	private IEnumerator TakingFromWardrobe() {
 		setThignState (ThingStateEnum.InTaking);
-		setAttendantState (AttendantStateEnum.TakingOut);
+		setAttendantState2 (AttendantStateEnum.TakingOut);
 		setPlayerState (StudentStateEnum.TakeFrom);
 		yield return new WaitForSeconds(secondForWait);
 		setPlayerState (StudentStateEnum.TakingProcessStay);
-		setAttendantState (AttendantStateEnum.TakingProcessDown);
+		setAttendantState2 (AttendantStateEnum.TakingProcessDown);
 
 		yield return new WaitForSeconds (secondForWait);
 		setPlayerState (StudentStateEnum.TakingProcessDown);
 		setThignState (ThingStateEnum.InOwner);
-		setAttendantState (AttendantStateEnum.Waiting);
+		setAttendantState2 (AttendantStateEnum.Waiting);
 	}
 
 	private void attendantGoToHangPosition() {
 		float step = speed * Time.deltaTime;
-		GameObjectMoveToAnotherObject (WardrobeAttendantPerson, HangAttendantPosition, step);
-		
-		float dist = Vector3.Distance(WardrobeAttendantPerson.transform.position, HangAttendantPosition.transform.position);
+		float dist = 0.0f;
+		if (ThingState == ThingStateEnum.InHanging) {
+			GameObjectMoveToAnotherObject (WardrobeAttendantPerson2, HangAttendantPosition, step);
+			dist = Vector3.Distance(WardrobeAttendantPerson2.transform.position, HangAttendantPosition.transform.position);
+		} else if (ThingState == ThingStateEnum.InAttendant) {
+			GameObjectMoveToAnotherObject (WardrobeAttendantPerson, HangAttendantPosition, step);
+			dist = Vector3.Distance(WardrobeAttendantPerson.transform.position, HangAttendantPosition.transform.position);
+		}
+
 		if (dist < step) {
 			if (ThingState == ThingStateEnum.InHanging) {
 				StartCoroutine (HangFromHangPosition ());
@@ -183,12 +243,12 @@ public class WardrobeColliderController : MonoBehaviour {
 
 	private IEnumerator HangFromHangPosition() {
 		setThignState (ThingStateEnum.InTaking);
-		setAttendantState (AttendantStateEnum.HangingOut);
+		setAttendantState2 (AttendantStateEnum.HangingOut);
 		yield return new WaitForSeconds(secondForWait);
-		setAttendantState (AttendantStateEnum.TakingProcessDown);
+		setAttendantState2 (AttendantStateEnum.TakingProcessDown);
 
 		yield return new WaitForSeconds (secondForWait);
-		setAttendantState (AttendantStateEnum.WalkingToTakingPlace);
+		setAttendantState2 (AttendantStateEnum.WalkingToTakingPlace);
 		setThignState (ThingStateEnum.InAttendant);
 	}
 
@@ -212,17 +272,41 @@ public class WardrobeColliderController : MonoBehaviour {
 
 	private void TakeThing() {
 		setThignState (ThingStateEnum.InHanging);
-		setAttendantState (AttendantStateEnum.WalkingToHangingPlace);
+		setAttendantState2 (AttendantStateEnum.WalkingToHangingPlace);
 	}
 
 	void OnTriggerStay(Collider col) {
 		if (col.name == "WardrobeTrigger") {
 			OnWardrobeTriggerStay ();
+		} else if (col.name == "WardrobeFromTrigger") {
+			OnWardrobeFromTriggerStay ();
 		}
 	}
 
 	private void OnWardrobeTriggerStay() {
-		if (AttendantState == AttendantStateEnum.Waiting) {
+		if (AttendantState == AttendantStateEnum.Waiting && AttendantState2 == AttendantStateEnum.Waiting) {
+			if (ThingState == ThingStateEnum.InHanging) {
+				//GiveToWardrobeText.SetActive (false);
+				//TakeFromWardrobeText.SetActive (true);
+				//if (Input.GetKeyDown (KeyCode.E)) {
+				//	TakeThing ();
+				//}
+			} else {
+				GiveToWardrobeText.SetActive (true);
+				TakeFromWardrobeText.SetActive (false);
+				if (Input.GetKeyDown (KeyCode.E)) {
+					GiveThing ();
+				}
+			}
+		} else {
+			GiveToWardrobeText.SetActive (false);
+			TakeFromWardrobeText.SetActive (false);
+		}
+	}
+
+
+	private void OnWardrobeFromTriggerStay() {
+		if (AttendantState == AttendantStateEnum.Waiting && AttendantState2 == AttendantStateEnum.Waiting) {
 			if (ThingState == ThingStateEnum.InHanging) {
 				GiveToWardrobeText.SetActive (false);
 				TakeFromWardrobeText.SetActive (true);
@@ -230,11 +314,11 @@ public class WardrobeColliderController : MonoBehaviour {
 					TakeThing ();
 				}
 			} else {
-				GiveToWardrobeText.SetActive (true);
-				TakeFromWardrobeText.SetActive (false);
-				if (Input.GetKeyDown (KeyCode.E)) {
-					GiveThing ();
-				}
+				//GiveToWardrobeText.SetActive (true);
+				//TakeFromWardrobeText.SetActive (false);
+				//if (Input.GetKeyDown (KeyCode.E)) {
+				//	GiveThing ();
+				//}
 			}
 		} else {
 			GiveToWardrobeText.SetActive (false);
@@ -252,6 +336,16 @@ public class WardrobeColliderController : MonoBehaviour {
 	private void ChangeParent(GameObject Child, GameObject NewParent) {
 		Child.transform.parent = NewParent.transform;
 		Child.transform.position = NewParent.transform.position;
+		Child.transform.rotation = NewParent.transform.rotation;
+	}
+
+	private float findHighest(GameObject gameObject) {  
+		return gameObject.GetComponent<Renderer> ().bounds.max.y;
+	}
+
+	private void ChangeParent(GameObject Child, GameObject NewParent, GameObject position) {
+		ChangeParent (Child, NewParent);
+		GameObjectMoveToAnotherObject (Child, position, 100.0f);
 	}
 
 	private void GameObjectMoveToAnotherObject(GameObject source, GameObject target, float step) {
