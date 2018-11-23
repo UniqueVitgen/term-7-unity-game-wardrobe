@@ -24,6 +24,7 @@ public class WardrobeColliderController : MonoBehaviour {
 	public GameObject PlaceWhereJacket;
 	public GameObject TrueJacket;
 	public GameObject FalseJacket;
+	public WardrobeModeEnum Mode;
 	private AttendantStateEnum AttendantState;
 	private AttendantStateEnum AttendantState2;
 	private ThingStateEnum ThingState;
@@ -33,12 +34,15 @@ public class WardrobeColliderController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		StudentState = StudentStateEnum.Stay;
+		animator = GetComponent<Animator> ();
 		secondForWait = 1.0f;
 		setAttendantState(AttendantStateEnum.Waiting);
 		setThignState (ThingStateEnum.InOwner);
-		GiveToWardrobeText.SetActive (false);
-		TakeFromWardrobeText.SetActive (false);
-		animator = GetComponent<Animator> ();
+		if (Mode == WardrobeModeEnum.Player) {
+			GiveToWardrobeText.SetActive (false);
+			TakeFromWardrobeText.SetActive (false);
+		}
 	}
 	
 	// Update is called once per frame
@@ -86,7 +90,7 @@ public class WardrobeColliderController : MonoBehaviour {
 			attendantGoToTakePosition ();
 		}
 		else if (AttendantState2 == AttendantStateEnum.Waiting) {
-			WardrobeAttendantPerson2.transform.position = TakePosition2.transform.position;
+			//WardrobeAttendantPerson2.transform.position = TakePosition2.transform.position;
 		}
 		if (AttendantState == AttendantStateEnum.WalkingToHangingPlace) {
 			attendantGoToHangPosition ();
@@ -95,23 +99,25 @@ public class WardrobeColliderController : MonoBehaviour {
 			attendantGoToTakePosition ();
 		}
 		else if (AttendantState == AttendantStateEnum.Waiting) {
-			WardrobeAttendantPerson.transform.position = TakePosition.transform.position;
+			//WardrobeAttendantPerson.transform.position = TakePosition.transform.position;
 		}
 	}
 
 	private void setPlayerState(StudentStateEnum state) {
-		if (state == StudentStateEnum.Stay) {
-			animator.SetInteger ("state", 5);
-		} else if (state == StudentStateEnum.Run) {
-			animator.SetInteger ("state", 1);
-		} else if (state == StudentStateEnum.TakeFrom) {
-			animator.SetInteger ("state", 2);
-		} else if (state == StudentStateEnum.TakeTo) {
-			animator.SetInteger ("state", 2);
-		} else if (state == StudentStateEnum.TakingProcessDown) {
-			animator.SetInteger ("state", 4);
-		} else if (state == StudentStateEnum.TakingProcessStay) {
-			animator.SetInteger ("state", 3);
+		if (animator != null) {
+			if (state == StudentStateEnum.Stay) {
+				animator.SetInteger ("state", 5);
+			} else if (state == StudentStateEnum.Run) {
+				animator.SetInteger ("state", 1);
+			} else if (state == StudentStateEnum.TakeFrom) {
+				animator.SetInteger ("state", 2);
+			} else if (state == StudentStateEnum.TakeTo) {
+				animator.SetInteger ("state", 2);
+			} else if (state == StudentStateEnum.TakingProcessDown) {
+				animator.SetInteger ("state", 4);
+			} else if (state == StudentStateEnum.TakingProcessStay) {
+				animator.SetInteger ("state", 3);
+			}
 		}
 		StudentState = state;
 		print ("StudentState: " + state);
@@ -292,15 +298,23 @@ public class WardrobeColliderController : MonoBehaviour {
 				//	TakeThing ();
 				//}
 			} else {
-				GiveToWardrobeText.SetActive (true);
-				TakeFromWardrobeText.SetActive (false);
-				if (Input.GetKeyDown (KeyCode.E)) {
+				if (Mode == WardrobeModeEnum.Player) {
+					GiveToWardrobeText.SetActive (true);
+					TakeFromWardrobeText.SetActive (false);
+				}
+				if (Mode == WardrobeModeEnum.Player) {
+					if (Input.GetKeyDown (KeyCode.E)) {
+						GiveThing ();
+					}
+				} else if (Mode == WardrobeModeEnum.Bot) {
 					GiveThing ();
 				}
 			}
 		} else {
-			GiveToWardrobeText.SetActive (false);
-			TakeFromWardrobeText.SetActive (false);
+			if (Mode == WardrobeModeEnum.Player) {
+				GiveToWardrobeText.SetActive (false);
+				TakeFromWardrobeText.SetActive (false);
+			}
 		}
 	}
 
@@ -308,9 +322,15 @@ public class WardrobeColliderController : MonoBehaviour {
 	private void OnWardrobeFromTriggerStay() {
 		if (AttendantState == AttendantStateEnum.Waiting && AttendantState2 == AttendantStateEnum.Waiting) {
 			if (ThingState == ThingStateEnum.InHanging) {
-				GiveToWardrobeText.SetActive (false);
-				TakeFromWardrobeText.SetActive (true);
-				if (Input.GetKeyDown (KeyCode.E)) {
+				if (Mode == WardrobeModeEnum.Player) {
+					GiveToWardrobeText.SetActive (false);
+					TakeFromWardrobeText.SetActive (true);
+				}
+				if (Mode == WardrobeModeEnum.Player) {
+					if (Input.GetKeyDown (KeyCode.E)) {
+						TakeThing ();
+					}
+				} else if (Mode == WardrobeModeEnum.Bot) {
 					TakeThing ();
 				}
 			} else {
@@ -321,15 +341,19 @@ public class WardrobeColliderController : MonoBehaviour {
 				//}
 			}
 		} else {
-			GiveToWardrobeText.SetActive (false);
-			TakeFromWardrobeText.SetActive (false);
+			if (Mode == WardrobeModeEnum.Player) {
+				GiveToWardrobeText.SetActive (false);
+				TakeFromWardrobeText.SetActive (false);
+			}
 		}
 	}
 
 	void OnTriggerExit(Collider col) {
 		if (col.name == "WardrobeTrigger") {
-			TakeFromWardrobeText.SetActive (false);
-			GiveToWardrobeText.SetActive (false);
+			if (Mode == WardrobeModeEnum.Player) {
+				TakeFromWardrobeText.SetActive (false);
+				GiveToWardrobeText.SetActive (false);
+			}
 		}
 	}
 
@@ -383,4 +407,9 @@ enum ThingStateEnum {
 
 enum StudentStateEnum {
 	Run, TakeTo, TakeFrom,  TakingProcessStay, TakingProcessDown, Stay
+}
+
+public enum WardrobeModeEnum {
+	Player = 1,
+	Bot = 0
 }
