@@ -13,8 +13,8 @@ public class botMovementAction : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		animator = GetComponent<Animator> ();
-		SetBotState (BotStateEnum.Go);
+		animator = Bot.GetComponent<Animator> ();
+		SetBotState (BotStateEnum.Wait);
 		//BotPoints = GameObject.FindGameObjectsWithTag ("BotPoint");
 		StartCoroutine (Action ());
 	}
@@ -25,8 +25,10 @@ public class botMovementAction : MonoBehaviour {
 	}
 
 	private void GameObjectMoveToAnotherObject(GameObject source, GameObject target, float step) {
-		source.transform.position = Vector3.MoveTowards(source.transform.position, target.transform.position, step);
-		GameObjectRotationToTargetObject (source, target, step);
+		if (target != null) {
+			source.transform.position = Vector3.MoveTowards(source.transform.position, target.transform.position, step);
+			GameObjectRotationToTargetObject (source, target, step);
+		}
 	}
 
 	private void GameObjectRotationToTargetObject(GameObject source, GameObject target, float step) {
@@ -68,23 +70,58 @@ public class botMovementAction : MonoBehaviour {
 
 	private IEnumerator Action() {
 		while (true) {
+			//this.Bot.SetActive (false);
+			//Bot.enabled = false;
+			yield return new WaitForSeconds(SecondsForWait);
+			//Bot.enabled = true;
+			this.Bot.SetActive (true);
 			foreach(GameObject BotPoint in BotPoints) {
+				//if (BotPoint.name == "StartPoint") {
+					//this.Bot.SetActive (true);
+				//}
+		
+				if (BotPoint.name == "WardrobePointGive" || BotPoint.name == "BuffetPoint" ) {
+					//this.Bot.SetActive (false);
+					yield return new WaitForSeconds (SecondsForWait);
+					//this.Bot.SetActive (true);
+				} else {
+					yield return new WaitForSeconds (SecondsForWait);
+				}
 				this.TargetBotPoint = BotPoint;
 				this.SetBotState (BotStateEnum.Go);
-				yield return new WaitForSeconds(SecondsForWait);
+				//if (BotPoint.name == "StairsPoint" || BotPoint.name == "StartPoint" ) {
+
+				//} else {
+					//yield return new WaitForSeconds(SecondsForWait);
+				//}
+
+
 			}
 		}
 	}
 
 	private void RenderBot() {
-		float step = speed * Time.deltaTime;
-		if (this.BotState == BotStateEnum.Go) {
-			GameObjectMoveToAnotherObject(this.Bot, this.TargetBotPoint, step);
-		}
+		if (this.TargetBotPoint != null) {
+			if (this.Bot.activeSelf) {
+				float step = speed * Time.deltaTime;
+				if (this.BotState == BotStateEnum.Go) {
+					GameObjectMoveToAnotherObject (this.Bot, this.TargetBotPoint, step);
+				}
 
-		float dist = Vector3.Distance(this.Bot.transform.position, this.TargetBotPoint.transform.position);
-		if (dist < step) {
-			SetBotState (BotStateEnum.Wait);
+				float dist = Vector3.Distance (this.Bot.transform.position, this.TargetBotPoint.transform.position);
+				if (dist < step) {
+					if ((TargetBotPoint.name == "StartPoint" || TargetBotPoint.name == "StairsPoint")) {
+						if (this.Bot.activeSelf) {
+							Bot.SetActive (false);
+						}
+					}
+					SetBotState (BotStateEnum.Wait);
+				}
+			} else {
+				if (!(TargetBotPoint.name == "StartPoint" || TargetBotPoint.name == "StairsPoint")) {
+					Bot.SetActive (true);
+				}
+			}
 		}
 	}
 }

@@ -34,6 +34,8 @@ public class WardrobeColliderController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		WardrobeAttendantPerson.transform.position = TakePosition.transform.position;
+		WardrobeAttendantPerson2.transform.position = TakePosition2.transform.position;
 		StudentState = StudentStateEnum.Stay;
 		animator = GetComponent<Animator> ();
 		secondForWait = 1.0f;

@@ -6,6 +6,7 @@ public class RotationController : MonoBehaviour {
 	public Camera yourCam;
 	public float mouseSpeed = 6;
 	public Transform player;
+	bool rotation = false;
 
 	// Use this for initialization
 	void Start () {
@@ -14,6 +15,12 @@ public class RotationController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if (Input.GetKeyDown (KeyCode.V)) {
+			rotation = !rotation;
+		}
+		if (rotation) {
+			updateRotation ();
+		}
 		//rotating here
 
 		//v1
@@ -42,6 +49,11 @@ public class RotationController : MonoBehaviour {
 		//v5 
 
 
+		//rotation end
+		
+	}
+
+	void updateRotation() {
 		float X = Input.GetAxis("Mouse X") * mouseSpeed;
 		float Y = Input.GetAxis("Mouse Y") * mouseSpeed;
 
@@ -56,7 +68,5 @@ public class RotationController : MonoBehaviour {
 
 			yourCam.transform.RotateAround(player.position, yourCam.transform.right, -Y);
 		}
-		//rotation end
-		
 	}
 }
