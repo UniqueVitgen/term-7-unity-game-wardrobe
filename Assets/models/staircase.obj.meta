@@ -1,9 +1,7 @@
 fileFormatVersion: 2
 guid: a447b0c59dc1b49638607f429a6d42b6
-timeCreated: 1540141563
-licenseType: Free
 ModelImporter:
-  serializedVersion: 21
+  serializedVersion: 23
   fileIDToRecycleName:
     100000: botsqrail_1_None
     100002: botsqrail_None
@@ -257,10 +255,263 @@ ModelImporter:
     4300094: twistedpost-oldway_8_
     4300096: twistedpost-oldway_9_
     4300098: twistedpost-oldway_No
+    2186277476908879412: ImportLogs
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bottomrail_1_NoneMat
+    second: {fileID: 2100000, guid: 4c0f89d61176f462d8d3a42b583c6cc5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bottomrail_NoneMat
+    second: {fileID: 2100000, guid: 879ad3dc16820493f92c90b774f55ff3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: botsqrail_1_NoneMat
+    second: {fileID: 2100000, guid: 2c84b6afa56f748adb231d2e9f5d4f56, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: botsqrail_NoneMat
+    second: {fileID: 2100000, guid: 99dee89fb4424455c86e0cf1b27fa8cd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: globepost1_1_NoneMat
+    second: {fileID: 2100000, guid: 40b8d994069514b17b2af214871d77e4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: globepost1_NoneMat
+    second: {fileID: 2100000, guid: 7739c02489d99413eb22eaa490e61774, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: globepost_1_NoneMat
+    second: {fileID: 2100000, guid: f7d048f4d14cd4333b96ef7e7c9288ed, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: globepost_NoneMat
+    second: {fileID: 2100000, guid: d60064256825d408a9c230873065137d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: riser_10_NoneMat
+    second: {fileID: 2100000, guid: 2acdfd54a6b3d4aa38f6f15edfcf6faf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: riser_1_NoneMat
+    second: {fileID: 2100000, guid: 3869beeb856fd419a9b0b4d378ed4159, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: riser_2_NoneMat
+    second: {fileID: 2100000, guid: f81fc5b74e9ed45149081b155c5fe5f9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: riser_3_NoneMat
+    second: {fileID: 2100000, guid: dccccf0e6545049da8214513a74a9aa9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: riser_4_NoneMat
+    second: {fileID: 2100000, guid: 565e9ae23c4c144b6a8c5be45a309634, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: riser_5_NoneMat
+    second: {fileID: 2100000, guid: 494ed14f85b754b5ca3f69d31632f20e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: riser_6_NoneMat
+    second: {fileID: 2100000, guid: 8709603f589de4186b785fd3547a5d88, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: riser_7_NoneMat
+    second: {fileID: 2100000, guid: 8a8ed3c29682e49919c84e1b3aeb317e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: riser_8_NoneMat
+    second: {fileID: 2100000, guid: 106013bfe47154fe4a34d8de91b60fcb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: riser_9_NoneMat
+    second: {fileID: 2100000, guid: c785151c4a5b24cfb821e088fe064046, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: riser_NoneMat
+    second: {fileID: 2100000, guid: 8cf64290ec9604e4d82735af067813de, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: step_10_NoneMat
+    second: {fileID: 2100000, guid: 39fe06387e91749138290e4849d915c5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: step_1_NoneMat
+    second: {fileID: 2100000, guid: 896ba015d5bc64254a62a554c66e93d0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: step_2_NoneMat
+    second: {fileID: 2100000, guid: 4779323ef8eb14383b228a39ece1bbb0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: step_3_NoneMat
+    second: {fileID: 2100000, guid: e444c043d3ff14e368ad2fb83e7a90d8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: step_4_NoneMat
+    second: {fileID: 2100000, guid: 8481c9d884e2b43bc850792df267a033, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: step_5_NoneMat
+    second: {fileID: 2100000, guid: aca25b805e76a4327bd6da6c95264c67, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: step_6_NoneMat
+    second: {fileID: 2100000, guid: cd195327a90744397945cee145196f77, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: step_7_NoneMat
+    second: {fileID: 2100000, guid: 2d999ce8940de417b9c689193c5bf966, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: step_8_NoneMat
+    second: {fileID: 2100000, guid: 859cbdcf8907b4b03a9db7631bb7b8b9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: step_9_NoneMat
+    second: {fileID: 2100000, guid: f5684719d6de04daea6a4dd193822e9d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: step_NoneMat
+    second: {fileID: 2100000, guid: 5c42e0608ec944eb0ae047982c40d1de, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: toprail_1_NoneMat
+    second: {fileID: 2100000, guid: 5b3f9a82bb98d493980ff543f5ddc5a6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: toprail_NoneMat
+    second: {fileID: 2100000, guid: 1f83c5e75f527470e90b39b6f946d9d4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: topsqrail_1_NoneMat
+    second: {fileID: 2100000, guid: 32325d00471a943e08817ddd19073435, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: topsqrail_NoneMat
+    second: {fileID: 2100000, guid: e7dc3621ac3c642da91a3251e40bbd8c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: twistedpost-oldway_10Mat
+    second: {fileID: 2100000, guid: adae09c8025724ed4b0b64724837950b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: twistedpost-oldway_11Mat
+    second: {fileID: 2100000, guid: 1f6fec7ae62c64b16b16dfffc33c6255, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: twistedpost-oldway_12Mat
+    second: {fileID: 2100000, guid: 0e20777b2471848ad9c9487c547fc828, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: twistedpost-oldway_13Mat
+    second: {fileID: 2100000, guid: 6079fae0d38444104adaa0c6e533e9ce, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: twistedpost-oldway_14Mat
+    second: {fileID: 2100000, guid: ea98640747ada4969a1447b61cb11978, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: twistedpost-oldway_15Mat
+    second: {fileID: 2100000, guid: 4897d8f3aa2b74e119ab11a58bb84107, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: twistedpost-oldway_1_Mat
+    second: {fileID: 2100000, guid: 94c709ae41ad645cea8943d9c38adf4d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: twistedpost-oldway_2_Mat
+    second: {fileID: 2100000, guid: a775953d3133c4010ba57559619d8a6d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: twistedpost-oldway_3_Mat
+    second: {fileID: 2100000, guid: 5ae717d8c6cc6415f8e22a56169d9d8b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: twistedpost-oldway_4_Mat
+    second: {fileID: 2100000, guid: 7b27091a0beb448ee965a39410ef71d2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: twistedpost-oldway_5_Mat
+    second: {fileID: 2100000, guid: 38c2c780213464a099e373d27f263984, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: twistedpost-oldway_6_Mat
+    second: {fileID: 2100000, guid: 8cacca277144a4c8da05d51a20eaaa12, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: twistedpost-oldway_7_Mat
+    second: {fileID: 2100000, guid: d8f77ea0f4fa04c86a728f35f2f0f11e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: twistedpost-oldway_8_Mat
+    second: {fileID: 2100000, guid: 4870091617e674096aac039a0e89a5cc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: twistedpost-oldway_9_Mat
+    second: {fileID: 2100000, guid: 510d74b2ed8c04cb985c90d0c32ac558, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: twistedpost-oldway_NoMat
+    second: {fileID: 2100000, guid: 7d8b5b9edb7ce43c1947820ce6051ab8, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -273,6 +524,8 @@ ModelImporter:
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
@@ -297,11 +550,15 @@ ModelImporter:
     optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -321,7 +578,6 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
