@@ -6,7 +6,7 @@ public class cameracontroller : MonoBehaviour {
 	public Camera cam1;
 	public Camera cam2;
 	public Camera cam1Top2;
-	bool isNeed2Camera = false;
+	bool isNeed2Camera = true;
 
 	// Use this for initialization
 	void Start () {
@@ -21,7 +21,7 @@ public class cameracontroller : MonoBehaviour {
 			globalVariable.setTopView (!globalVariable.isTopView);
 		}
 		if (globalVariable.isTopView) {
-			if (!isNeed2Camera) {
+			if (isNeed2Camera) {
 				if (!cam1Top2.enabled) {
 					cam1Top2.enabled = true;
 					cam2.enabled = false;
