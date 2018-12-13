@@ -10,9 +10,9 @@ public class cameracontroller : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		cam1.enabled = true;
+		cam1.enabled = false;
 		cam2.enabled = false;
-		cam1Top2.enabled = false;
+		cam1Top2.enabled = true;
 	}
 	
 	// Update is called once per frame
@@ -21,7 +21,7 @@ public class cameracontroller : MonoBehaviour {
 			globalVariable.setTopView (!globalVariable.isTopView);
 		}
 		if (globalVariable.isTopView) {
-			if (isNeed2Camera) {
+			if (!isNeed2Camera) {
 				if (!cam1Top2.enabled) {
 					cam1Top2.enabled = true;
 					cam2.enabled = false;
